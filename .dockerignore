@@ -1,0 +1,52 @@
+# Docker ignore file for Jupiter AG MCP Server
+
+# Rust build artifacts
+target/
+**/*.rs.bk
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Environment files (these should be provided at runtime)
+.env
+.env.local
+.env.production
+
+# Git
+.git/
+.gitignore
+
+# Documentation and examples
+README.md
+docs/
+examples/
+
+# CI/CD
+.github/
+.gitlab-ci.yml
+
+# Docker files
+Dockerfile*
+docker-compose*.yml
+.dockerignore
+
+# Logs
+*.log
+logs/
+
+# Test files
+tests/
+benches/

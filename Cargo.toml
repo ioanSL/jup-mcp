@@ -1,0 +1,43 @@
+[package]
+name = "jup-mcp"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+# Async runtime
+tokio = { version = "1.0", features = ["full"] }
+
+# MCP SDK (we'll use a JSON-RPC approach since there's no official Rust SDK yet)
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+# Solana ecosystem
+solana-client = "1.18"
+solana-sdk = "1.18"
+spl-token = "4.0"
+
+# HTTP client for Jupiter API
+reqwest = { version = "0.11", features = ["json"] }
+
+# Error handling
+anyhow = "1.0"
+thiserror = "1.0"
+
+# Base58 encoding for private keys
+bs58 = "0.5"
+
+# Base64 for transaction encoding
+base64 = "0.21"
+
+# Bincode for transaction serialization
+bincode = "1.3"
+
+# Environment variable management
+dotenv = "0.15"
+
+# Logging
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+
+# UUID for request IDs
+uuid = { version = "1.0", features = ["v4"] }
