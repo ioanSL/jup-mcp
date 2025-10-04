@@ -42,10 +42,10 @@ RUN useradd -r -s /bin/false -m -d /app jupiter-mcp
 WORKDIR /app
 
 # Copy the binary from builder stage
-COPY --from=builder /app/target/release/jup-mpc ./jup-mpc
+COPY --from=builder /app/target/release/jup-mcp ./jup-mcp
 
 # Verify the binary exists and change ownership to the non-root user
-RUN ls -la /app/jup-mpc && chown jupiter-mcp:jupiter-mcp /app/jup-mpc
+RUN ls -la /app/jup-mcp && chown jupiter-mcp:jupiter-mcp /app/jup-mcp
 
 # Switch to non-root user
 USER jupiter-mcp
@@ -56,7 +56,7 @@ ENV SOLANA_NETWORK=devnet
 
 # Health check (optional - checks if binary exists and is executable)
 HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
-    CMD [ -x "./jup-mpc" ] || exit 1
+    CMD [ -x "./jup-mcp" ] || exit 1
 
 # Run the binary
-ENTRYPOINT ["./jup-mpc"]
+ENTRYPOINT ["./jup-mcp"]
